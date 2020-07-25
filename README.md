@@ -17,7 +17,7 @@ This is an Arduino library for RC vehicles
 ## Usage
 
 Code examples
-![](https://github.com/TheDIYGuy999/rcTrigger/blob/master/codeExamples.jpg)
+![](https://github.com/TheDIYGuy999/rcTrigger/blob/master/codeExamples.png)
 
 Transmitter analog channel wiring (instead of a potentiometer)
 ![](https://github.com/TheDIYGuy999/rcTrigger/blob/master/2Buttons.jpg)
