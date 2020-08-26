@@ -14,6 +14,9 @@ This is an Arduino library for RC vehicles
 ## New in V 1.0
 - Initial commit
 
+## New in V 1.1
+- Slight optimizations for ESP32 Sound & Light Controller
+
 ## Usage
 
 Code examples

@@ -21,10 +21,10 @@ bool rcTrigger::momentary(unsigned int pulsewidth, unsigned int target) {
     
     if (millis() - _momentaryPreviousMillis > 20) { // every 20ms
         _momentaryPreviousMillis = millis();
-        if (_momentaryPulsewidth >= _momentaryTarget - 50 && _momentaryPulsewidth <= _momentaryTarget + 50 // Range OK
-            && _momentaryPulsewidth >= _momentaryPulsewidthPrevious - 2 && _momentaryPulsewidth <= _momentaryPulsewidthPrevious + 2) _momentaryState = true; // stable reading
-        else _momentaryState = false;
-    
+        if (_momentaryPulsewidth > 0) {
+            if (_momentaryPulsewidth >= _momentaryTarget - 50 && _momentaryPulsewidth <= _momentaryTarget + 50) _momentaryState = true; // Range OK
+            else _momentaryState = false;
+        }
         _momentaryPulsewidthPrevious = _momentaryPulsewidth;
     }
     
@@ -40,7 +40,7 @@ bool rcTrigger::toggle(unsigned int pulsewidth, unsigned int target) {
     if (millis() - _togglePreviousMillis > 20) { // every 20ms
         _togglePreviousMillis = millis();
         if (_togglePulsewidth >= _toggleTarget - 50 && _togglePulsewidth <= _toggleTarget + 50 // Range OK
-            && _togglePulsewidth >= _togglePulsewidthPrevious - 2 && _togglePulsewidth <= _togglePulsewidthPrevious + 2) _toggleTargetOk = true; // stable reading
+            && _togglePulsewidth >= _togglePulsewidthPrevious - 10 && _togglePulsewidth <= _togglePulsewidthPrevious + 10) _toggleTargetOk = true; // stable reading
         else _toggleTargetOk = false;
         
         _togglePulsewidthPrevious = _togglePulsewidth;
@@ -78,7 +78,7 @@ bool rcTrigger::toggleLong(unsigned int pulsewidth, unsigned int target) {
     if (millis() - _toggleLongPreviousMillis > 20) { // every 20ms
         _toggleLongPreviousMillis = millis();
         if (_toggleLongPulsewidth >= _toggleLongTarget - 50 && _toggleLongPulsewidth <= _toggleLongTarget + 50 // Range OK
-            && _toggleLongPulsewidth >= _toggleLongPulsewidthPrevious - 2 && _toggleLongPulsewidth <= _toggleLongPulsewidthPrevious + 2) _toggleLongTargetOk = true; // stable reading
+            && _toggleLongPulsewidth >= _toggleLongPulsewidthPrevious - 10 && _toggleLongPulsewidth <= _toggleLongPulsewidthPrevious + 10) _toggleLongTargetOk = true; // stable reading
         else _toggleLongTargetOk = false;
         
         _toggleLongPulsewidthPrevious = _toggleLongPulsewidth;
