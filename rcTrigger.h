@@ -2,7 +2,7 @@
  rcTrigger.h - Library for RC signal detection (in microseconds) and actions triggering
  Created by TheDIYGuy999 June 2020
  Released into the public domain.
- V1.0
+ V1.2
  */
 
 #ifndef rcTrigger_h
@@ -15,6 +15,10 @@ class rcTrigger {
   public:
     rcTrigger(unsigned long duration);
     
+    bool onOff(unsigned int pulsewidth, unsigned int on, unsigned int off);
+    
+    bool window(unsigned int pulsewidth, unsigned int min, unsigned int max);
+    
     bool momentary(unsigned int pulsewidth, unsigned int target);
     
     bool toggle(unsigned int pulsewidth, unsigned int target);
@@ -23,6 +27,18 @@ class rcTrigger {
     
   private:
     unsigned long _duration;
+    
+    // On off function
+    unsigned int _onOffPulsewidth;
+    unsigned int _onOffOn;
+    unsigned int _onOffOff;
+    bool _onOffState;
+    
+    // Window function
+    unsigned int _windowPulsewidth;
+    unsigned int _windowMin;
+    unsigned int _windowMax;
+    bool _windowState;
     
     // Momentary function
     unsigned int _momentaryPulsewidth;

@@ -17,6 +17,9 @@ This is an Arduino library for RC vehicles
 ## New in V 1.1
 - Slight optimizations for ESP32 Sound & Light Controller
 
+## New in V 1.2
+- functions onOff() & window() added
+
 ## Usage
 
 Code examples
