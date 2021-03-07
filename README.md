@@ -11,14 +11,11 @@ This is an Arduino library for RC vehicles
 - toggle() toggling true / false (latching), if in range shorter than "duration"
 - toggleLong() toggling true / false (latching), if in range longer than "duration"
 
-## New in V 1.0
-- Initial commit
-
-## New in V 1.1
-- Slight optimizations for ESP32 Sound & Light Controller
-
-## New in V 1.2
-- functions onOff() & window() added
+## Changes:
+- v1.0: Initial commit
+- v1.1: Slight optimizations for ESP32 Sound & Light Controller
+- v1.2: Functions onOff() & window() added
+- v1.3: Arduino 1.5 structure, so it's not detected as "legacy" library anymore
 
 ## Usage
 
@@ -32,4 +29,4 @@ Transmitter analog channel wiring (instead of a potentiometer)
 
 See [example](https://github.com/TheDIYGuy999/rcTrigger/blob/master/examples/rcTrigger/rcTrigger.ino).
 
-(c) 2020 TheDIYGuy999
+(c) 2020 - 2021 TheDIYGuy999
